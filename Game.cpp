@@ -8,7 +8,6 @@ Game::Game()
 
 void Game::Start()
 {
-    int monster_dead;
     ChooseCharacter();
     // while (player->IsAlive()) {
     //     ShowState();
@@ -19,8 +18,13 @@ void Game::Start()
     //         monster_dead += 1;
     //         player->TakeLevel();
     //     }
+    //     if (!monster->IsAlive() && monster->name == "Minotaur")
+    //         break;
     // }
-    // std::cout << "You have been defeated. Game Over." << std::endl;
+    // if (monster->name != "Minotaur")
+    //     std::cout << "You have been defeated. Game Over." << std::endl;
+    // else
+    //     std::cout << "You have defeated the Minotaur ! Congratulation." << std::endl;
     // ShowState();
     // std::cout << "You have defeated a total of " << monster_dead << " monsters" << std::endl;
 }
@@ -41,30 +45,11 @@ void Game::ChooseCharacter()
 
 void Game::EncounterMonster()
 {
-    bool flag = false;
-    int choice;
-
-    while (flag != true) {
-        choice = rand() % 3;
-        flag = true;
-
-        if (player->level == 1)
-            choice = 0;
-        if (player->level <= 5 && choice == 2)
-            flag = false;
-    };
-
-    switch (choice) {
-        case 0:
-            monster = std::make_unique<SoldierSlime>();
-            break;
-        case 1:
-            monster = std::make_unique<RedMage>();
-            break;
-        case 2:
-            monster = std::make_unique<Minotaur>();
-            break;
-    }
+    // LET'S CODE
+        if (player->level == 1) {
+            // LET'S CODE
+        }
+    // LET'S CODE
     std::cout << "A wild " << monster->name << " appears!\n" << std::endl;
 }
 
