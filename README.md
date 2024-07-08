@@ -160,9 +160,9 @@ Renseignez-vous sur les éléments suivants pour vous aider :
 - `rand()`
 - les boucles `while`
 
-Pour créer/initialiser un SoldierSlime :
+Pour créer/initialiser un Minotaure :
 ``` C++
-monster = std::make_unique<SoldierSlime>();
+monster = std::make_unique<Minotaur>();
 ```
 :::
 \newpage
@@ -199,6 +199,82 @@ A wild Soldier Slime appears!
 
 ## Aïe ! ça fait mal !
 
-Billy se retrouve face à un monstre. Objectif ? Lui faire des dégàts ! Mais Billy ne sais pas comment faire. Vite ! Direction le fichier `ACharacter.cpp` dans la fonction `TakeDamage`.
+Billy se retrouve face à un monstre. Objectif ? Lui faire des dégâts ! Mais Billy ne sait pas comment faire. Vite ! Direction le fichier `ACharacter.cpp` dans la fonction `TakeDamage`. Cette fonction doit modifier la variable `hp` en fonction des dégâts subis. Attention, chaque monstre possède de la défense.
+
+``` C++
+void ACharacter::TakeDamage(int damage)
+{
+    int finalDamage;
+    // LET'S CODE
+    std::cout << name << " takes " << finalDamage << " damage and has " << hp << " HP left.\n" << std::endl;
+}
+```
+
+::: tip
+Dans le fichier `ACharacter.hpp`, vous pouvez voir la classe `ACharacter` avec toutes les variables dont vous avez accès.
+
+Attention, ce fichier ne doit pas être modifié.
+:::
+
+## Je ressens la puissance m'envahir !
+
+À force de tuer des monstres, Billy gagne en niveaux. À la fin de chaque combat, il y aura un choix à faire. Voici un petit exemple :
+
+Billy vient de battre un Mage Rouge. Il gagne un niveau et passe donc au niveau 3.
+Si Billy décide d'augmenter son attaque, il gagnera 3 points en *attack* (car il est niveau 3).
+Si Billy décide d'augmenter sa défense, il gagnera 3 points en *defense*.
+Et si Billy décide de se soigner, il gagnera 50% de ses *hp* actuels (peu importe le niveau).
+
+Toujours dans le fichier `ACharacter.cpp`, modifiez la fonction `TakeLevel`.
+
+``` C++
+void ACharacter::TakeLevel()
+{
+    level += 1;
+    std::cout << name << " gains a level and is now at level " << level << ". Choose to increase your :\n1. Attack\n2. Defense\n3. Heal\n";
+    // LET'S CODE
+}
+```
+
+::: tip
+Renseignez-vous sur les éléments suivants pour vous aider :
+- `std::cin`
+- l'instruction `switch`
+:::
+\newpage
+
+# Conclusion
+
+Bravo à vous ! Vous avez fini ! Pour pouvoir envoyer Billy à l'aventure une bonne fois pour toutes, direction le fichier `Game.cpp` une dernière fois dans la fonction `Start` et copiez simplement le code suivant.
+
+``` C++
+void Game::Start()
+{
+    int monster_dead;
+    ChooseCharacter();
+    while (player->IsAlive()) {
+        ShowState();
+        EncounterMonster();
+        Battle();
+        if (!monster->IsAlive() && monster->name == "Minotaur")
+            break;
+        if (!monster->IsAlive()) {
+            std::cout << "You have defeated the " << monster->name << "!" << std::endl;
+            monster_dead += 1;
+            player->TakeLevel();
+        }
+    }
+    if (monster->IsAlive())
+        std::cout << "You have been defeated. Game Over." << std::endl;
+    else
+        std::cout << "You have defeated the Minotaur ! Congratulation." << std::endl;
+    ShowState();
+    std::cout << "You have defeated a total of " << monster_dead << " monsters" << std::endl;
+}
+```
+
+La chasse est maintenant ouverte ! À vous de jouer pour que Billy batte le Minotaure et sauve son village. Les habitants le soutiennent et souhaitent le revoir victorieux.
+
+Merci à vous d'avoir suivi les aventures de Billy et je vous dis peut-être à bientôt pour de nouvelles péripéties.
 
 # Annexes

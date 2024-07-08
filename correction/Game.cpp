@@ -14,15 +14,15 @@ void Game::Start()
         ShowState();
         EncounterMonster();
         Battle();
+        if (!monster->IsAlive() && monster->name == "Minotaur")
+            break;
         if (!monster->IsAlive()) {
             std::cout << "You have defeated the " << monster->name << "!" << std::endl;
             monster_dead += 1;
             player->TakeLevel();
         }
-        if (!monster->IsAlive() && monster->name == "Minotaur")
-            break;
     }
-    if (monster->name != "Minotaur")
+    if (monster->IsAlive())
         std::cout << "You have been defeated. Game Over." << std::endl;
     else
         std::cout << "You have defeated the Minotaur ! Congratulation." << std::endl;
