@@ -4,7 +4,7 @@ subtitle:   Petit jeu textuel
 language:   C++
 module:     Cobra
 author:     Anaëlle URBON
-version:    0.1
+version:    1.0
 branding:   Diversity
 ---
 
