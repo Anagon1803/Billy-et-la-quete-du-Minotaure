@@ -277,4 +277,6 @@ La chasse est maintenant ouverte ! À vous de jouer pour que Billy batte le Mino
 
 Merci à vous d'avoir suivi les aventures de Billy et je vous dis peut-être à bientôt pour de nouvelles péripéties.
 
+![cat-100](asset/knight%20slime.png "Slime Chevalier"){width=100%}
+
 # Annexes
