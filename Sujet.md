@@ -78,6 +78,13 @@ char *nom = "Billy";
 
 Les fonctions sont des blocs de code qui réalisent une tâche particulière. Par exemple, il peut y avoir une fonction pour ajouter deux nombres ou pour afficher un message à l'écran. On les appelle quand on a besoin d'effectuer cette tâche.
 
+``` C++
+int addition(int a, int b)
+{
+    return (a + b);
+}
+```
+
 ### Objets et Classes
 
 C++ est un langage orienté objet, ce qui signifie qu'il permet de créer des objets. Une classe est comme un modèle ou une recette, et un objet est une instance de cette classe. Par exemple, si vous avez une classe "Voiture", vous pouvez créer des objets comme "maVoiture" ou "taVoiture", chacun avec ses propres caractéristiques (couleur, marque, etc.).
