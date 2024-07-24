@@ -57,7 +57,41 @@ Le langage C++ est un langage de programmation qui permet de donner des instruct
 
 ### Langage de Programmation
 
-C++ est un langage utilisé par les développeurs pour écrire des programmes. Un programme est une suite d'instructions que l'ordinateur exécute pour réaliser une tâche.
+C++ est un langage utilisé par les développeurs pour écrire des programmes. Un programme est une suite d'instructions que l'ordinateur exécute pour réaliser une tâche. Voici quelques avantages du C++ :
+
+- Performance Élevée
+
+C++ est un langage compilé qui permet une gestion fine de la mémoire et des ressources, ce qui en fait un choix idéal pour les applications nécessitant des performances élevées, comme les jeux vidéo, les systèmes d'exploitation et les logiciels embarqués.
+
+- Flexibilité et Contrôle
+
+C++ offre un contrôle détaillé sur le matériel et les ressources système grâce à des fonctionnalités telles que la gestion manuelle de la mémoire (allocations dynamiques et statiques) et l'utilisation de pointeurs.
+
+- Programmation Orientée Objet (POO)
+
+Le C++ prend en charge la programmation orientée objet, ce qui permet une modélisation claire et organisée des problèmes complexes via des concepts comme l'héritage, le polymorphisme et l'encapsulation.
+
+- Portabilité
+
+Les programmes en C++ peuvent être compilés et exécutés sur diverses plateformes avec peu ou pas de modifications, rendant le code très portable.
+
+- Richesse de la Bibliothèque Standard
+
+La bibliothèque standard de C++ (STL) fournit un large éventail de fonctionnalités prêtes à l'emploi, telles que les structures de données (listes, vecteurs, maps, etc.), les algorithmes et les utilitaires, facilitant ainsi le développement rapide d'applications.
+
+- Communauté et Ressources Abondantes
+
+Le C++ bénéficie d'une vaste communauté de développeurs et d'une pléthore de ressources éducatives, de bibliothèques open-source et de frameworks, ce qui facilite l'apprentissage et le développement.
+
+- Interopérabilité avec d'Autres Langages
+
+C++ peut être intégré avec d'autres langages, tels que C et Java, ce qui permet une réutilisation et une extension facile du code existant.
+
+- Applications Diversifiées
+
+Le C++ est utilisé dans divers domaines, allant du développement de logiciels systèmes, d'applications scientifiques et financières, aux applications graphiques et de jeux, montrant ainsi sa polyvalence.
+
+Ces avantages font du C++ un langage puissant et populaire pour une variété de projets et d'applications.
 
 ### Syntaxe
 
@@ -70,8 +104,8 @@ Les variables sont comme des boîtes où l'on peut stocker des valeurs (nombres,
 ``` C++
 int age = 17;
 float taille = 1.70;
-char grade = 'B';
-char *nom = "Billy";
+char grade = 'E';
+std::string nom = "Billy";
 ```
 
 ### Fonctions
@@ -99,6 +133,40 @@ class Voiture {
 
 Voiture maVoiture(marque, modele, annee_fabrication);
 Voiture taVoiture(marque, modele, annee_fabrication);
+```
+
+### Méthodes
+
+Une méthode est une fonction qui appartient à une classe. Les méthodes sont utilisées pour définir les comportements des objets créés à partir de cette classe. Elles permettent de manipuler les données membres de la classe et d'interagir avec ces objets de manière contrôlée.
+
+``` C++
+// Bibliothèque standard de C++ pour pouvoir utiliser des les éléments std::cout, std::endl et std::string
+#include <iostream>
+#include <string>
+
+class Chien {
+    public:
+        // Constructeur pour initialiser le nom du chien. Il est executé automatiquement lorsque la classe est créé pour la première fois
+        Chien(std::string nom) : nom_(nom) {}
+
+        // Méthode pour faire aboyer le chien
+        void aboyer() {
+            std::cout << nom_ << " dit: Woof! Woof!" << std::endl;
+        }
+
+    private:
+        std::string nom_; // Nom du chien
+};
+
+int main() {
+    // Créer un objet de la classe Chien
+    Chien monChien("Buddy");
+
+    // Appeler la méthode aboyer
+    monChien.aboyer();
+
+    return 0;
+}
 ```
 
 ### Boucles
